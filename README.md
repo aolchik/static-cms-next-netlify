@@ -9,6 +9,29 @@ There are some boilerplate or tutorials for the combination of Next.js and Netli
 
 Next.js blogging template for Netlify has already implemented these standard features for building blogs with only using Next.js and Netlify stacks.
 
+To develop it locally, clone this repository and run the following command to start the local dev server:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+To be able to run Netlify Git Gateway you need to enable the Git Gateway service inside Netlify site settings. Through Netlify Git Gateway, repository users can be administered without the need to create individual users to the git repo.
+
+In order to test if everything is working we need to spin up a proxy server for our backend in order to test locally so we don't have to test directly with a live repo. You should run this command in a new tab/window in your cmd so you also have the next dev running.
+      
+```bash
+npx @staticcms/proxy-server
+```
+
+Visit `127.0.0.1:3000` to preview your changes.
+
+To reindex, run 
+```bash
+pnpm build
+```
+
+
 ## Demo
 
 Deploy on your environment by clicking here:

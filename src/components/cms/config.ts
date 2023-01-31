@@ -87,7 +87,20 @@ const config: Config = {
       create: true,
       slug: "{{slug}}",
       identifier_field: "slug",
-      summary: "{{title}}",
+      summary: "{{title}} - {{author}} - {{date}} - {{tags}}",
+      view_filters: [
+        { label: "Markdown Posts", field: "tags", pattern: "markdown" },
+      ],
+      view_groups: [
+        { label: "Year", field: "date", pattern: '\\d{4}' },
+      ],
+      sortable_fields: {
+        fields: ["date", "author","tags"],
+        default: { 
+          field: "date",
+          direction: "Descending",
+        },
+      },
       fields: [
         { label: "Slug", name: "slug", widget: "string" },
         { label: "Title", name: "title", widget: "string" },
